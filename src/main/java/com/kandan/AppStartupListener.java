@@ -23,7 +23,7 @@ public class AppStartupListener implements ServletContextListener {
     	 String smtpHost = "smtp.gmail.com";
     	 int smtpPort = 587;
     	 String smtpUser = "mani535.416u@gmail.com";
-    	 String smtpPass = "ejwj bvts dsuu nvvw";
+    	 String smtpPass = "*** *** *** ***"; //replace with your actual App Password related to Email
     	 String fromAddress = "mani535.416u@gmail.com";
     	 
     	 EmailService emailService = new EmailService(smtpHost, smtpPort, smtpUser, smtpPass, fromAddress);
