@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern Subscription</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontAwesome/fontawesome-free-6.7.2-web/css/all.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Subscribe to Patterns</h2>
+    <p class="text">Subscribe to get daily coding patterns, complete with explanations and examples, directly in your in-box which boost your problem solving skills stronger and smarter!</p>
+    <form action="EmailServlet" method="post">
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit"><i class="fas fa-paper-plane" style="padding-right: 4px;"></i>Subscribe</button>
+    </form>
+    <p class="text" id="text-text">Click on "Add Pattern" to add new pattern or see what others are contributing!</p>
+    <button onclick="openPatternPopup()"><i class="fas fa-plus" style="padding-right: 4px;"></i>Add Pattern</button>
+  </div>
+
+  <div class="pattern-popup-container" id="patternPopup">
+    <span class="close-btn" onclick="closePatternPopup()">&times;</span>
+    <h3>Add new pattern</h3>
+    <form action="PatternServlet" method="post">
+        <textarea name="title" placeholder="Pattern Title" required></textarea>
+        <textarea name="description" placeholder="Pattern description" required></textarea>
+        <textarea name="code" placeholder="Pattern Code" required></textarea>
+        <textarea name="explanation" placeholder="Pattern-code Explanation" required></textarea>
+        <button type="submit" id="submit-btn"><i class="fas fa-check" style="padding-right: 4px;"></i>Submit Pattern</button>
+    </form>
+  </div>
+  
+  <div class="popup-overlay" id="successPopup">
+    <div class="popup-box">
+      <span class="close-popup" onclick="closeSuccessPopup()">&times;</span>
+      <div class="success-icon">&#10004;</div>
+      <div style="color: #ccc; font-size: 1.2rem; font-weight: bold;">Thank you! Your subscription was Successful</div>
+    </div>
+  </div>
+  
+  <div class="pattern-popup" id="successPopup">
+    <div class="pattern-popup-content">
+      <span class="close-popup" onclick="closeSuccessPopup()">&times;</span>
+      <h2 style="color: #4BB543;">Success</h2>
+      <div style="color: #ccc; font-size: 1.2rem; font-weight: bold;">Your pattern stored successfully!</div>
+    </div>
+  </div>
+  
+   <div class="duplicate-popup" id="warningPopup">
+    <div class="duplicate-popup-content">
+      <span class="close-popup" onclick="closeWarningPopup()">&times;</span>
+      <h2 style="color: red;">Failed!</h2>
+      <div style="color: #ccc; font-size: 1.2rem; font-weight: bold;">Duplicate Entry!</div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+  
+</body>
+</html>
